@@ -23,6 +23,12 @@ def scrape_data():
 def make_chart(data, filename):
     print("generating matplotlib chart")
     plt.plot(data)
+    ax = df.plot.bar(x=( 'Date',),figsize=(20, 10),stacked=True)
+    plt.xlabel('Date')
+    plt.ylabel('Yield Curve Rates')
+    plt.title('Daily Treasury Yield Curve Rates')
+    ax.legend()
+    plt.show()
     plt.savefig(f'charts/{filename}.png')
     print("completed")
 
